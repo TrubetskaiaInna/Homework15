@@ -1,6 +1,8 @@
-<p>
-  <span>{{day}}:</span>
-  {{day | weekDay: 'ua'}}
-</p>
-<p>{{name| nameInitials}}</p>
-<p>Age: {{birthday | age}}</p>
+<p>{{day}}:
+  {{day | weekDay: 'fr'}}</p>
+
+  <div appChangePosition class="user" *ngFor="let user of users">
+    {{user.name| nameInitials}}
+    <span>Age: {{user.birthday | age}}</span>
+  </div>
+

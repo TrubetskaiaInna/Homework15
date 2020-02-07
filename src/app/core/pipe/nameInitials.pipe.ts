@@ -11,13 +11,12 @@ export class NameInitialsPipe implements PipeTransform {
 
     str = str.trim();
     arrStr = str.split(' ');
-    for (let i = 0; i < arrStr.length; i++) {
-      if (arrStr[i].length !== 0) {
-        const interimArr = arrStr[i];
-        const bigLetters = interimArr[0].toLocaleUpperCase();
-        arrBigLetter.push(bigLetters + interimArr.slice(1));
+    arrStr.forEach((el, index) => {
+      if (el !== '') {
+        const bigLetters = el[0].toLocaleUpperCase();
+        arrBigLetter.push(bigLetters + el.slice(1));
       }
-    }
+    });
     for (let i = 1; i < arrBigLetter.length; i++) {
       arrInitial.push(arrBigLetter[i].slice(0, 1) + '.');
     }

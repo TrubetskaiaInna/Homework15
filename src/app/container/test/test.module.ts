@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TestComponent} from './test.component';
-import {NameInitialsPipe} from '../../core/nameInitials.pipe';
-import {AgePipe} from '../../core/age.pipe';
-import {WeekDayPipe} from '../../core/weekDay.pipe';
+import {NameInitialsPipe} from '../../core/pipe/nameInitials.pipe';
+import {AgePipe} from '../../core/pipe/age.pipe';
+import {WeekDayPipe} from '../../core/pipe/weekDay.pipe';
+import {ChangePositionModule} from '../../core/changePositionDirective/changePosition.directive.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {WeekDayPipe} from '../../core/weekDay.pipe';
     WeekDayPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ChangePositionModule
   ],
   exports: [
     TestComponent
