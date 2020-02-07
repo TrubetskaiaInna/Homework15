@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test.scss']
 })
 export class TestComponent implements OnInit {
- public str = '   ivanov   ivan   ivanovich ';
-  constructor() { }
+  public str = '   ivanov   ivan   ivanovich ';
+  public birthday = '6.2.2000';
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
