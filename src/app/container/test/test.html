@@ -1,8 +1,9 @@
-<p>{{day}}:
-  {{day | weekDay: 'fr'}}</p>
+<div class="weekDay" [appChangeColor]="color">{{day}}:
+  {{day | weekDay: 'fr'}}</div>
+<input placeholder="enter color" class="weekDayInput" type="text" (input)="color=($event.target.value)">
 
-  <div appChangePosition class="user" *ngFor="let user of users">
-    {{user.name| nameInitials}}
-    <span>Age: {{user.birthday | age}}</span>
-  </div>
+<div appChangePosition class="user" *ngFor="let user of users">
+  {{user.name| nameInitials}}
+  <span>Age: {{user.birthday | age}}</span>
+</div>
 

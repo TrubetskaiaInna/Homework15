@@ -1,1 +1,23 @@
+.weekDay{
+  width: 190px;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10px;
+  margin-top: 20px;
+}
 
+.weekDayInput{
+  width: 185px;
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.user{
+  display: flex;
+  width: 250px;
+  height: 30px;
+  border: 1px solid silver;
+  margin-left: 10px;
+}

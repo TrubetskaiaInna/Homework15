@@ -6,7 +6,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./test.scss']
 })
 export class TestComponent implements OnInit {
-
+  public color;
+  public day = '06.02.2000';
   public users = [
     {
       name: '   ivanov   ivan   ivanovich ',
@@ -21,8 +22,6 @@ export class TestComponent implements OnInit {
       birthday: '13.7.1990'
     }
   ];
-
-  public day = '06.02.2000';
 
   constructor() {
   }

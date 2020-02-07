@@ -5,6 +5,7 @@ import {NameInitialsPipe} from '../../core/pipe/nameInitials.pipe';
 import {AgePipe} from '../../core/pipe/age.pipe';
 import {WeekDayPipe} from '../../core/pipe/weekDay.pipe';
 import {ChangePositionModule} from '../../core/changePositionDirective/changePosition.directive.module';
+import {ChangeColorModule} from '../../core/changeColorDirective/changeColor.directive.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {ChangePositionModule} from '../../core/changePositionDirective/changePos
   ],
   imports: [
     CommonModule,
-    ChangePositionModule
+    ChangePositionModule,
+    ChangeColorModule
   ],
   exports: [
     TestComponent
