@@ -6,11 +6,12 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class WeekDayPipe implements PipeTransform {
   transform(value: string, language: string): string {
     const days = {
-      ua: ['Понедiлок', 'Вiвторок', 'Середа', 'Четвер', 'П"ятниця', 'Субота', 'Недiля'],
-      en: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      fr: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
+      ua: ['Недiля', 'Понедiлок', 'Вiвторок', 'Середа', 'Четвер', 'П"ятниця', 'Субота'],
+      en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      fr: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
     };
-    const day = new Date(value);
-    return days[language][((day).getDay() - 1)];
+    const str = value.split('.').reverse().join('.');
+    const day = new Date(str);
+    return days[language][(day).getDay()];
   }
 }
