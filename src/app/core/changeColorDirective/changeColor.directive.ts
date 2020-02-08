@@ -7,12 +7,12 @@ export class ChangeColorDirective {
   constructor(private el: ElementRef) {
   }
 
-  @Input('appChangeColor') appChangeColor: string;
+  @Input('appChangeColor') changeColor: string;
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.change(this.appChangeColor || 'red');
+    this.change(this.changeColor);
   }
   private change(color: string) {
-    this.el.nativeElement.style.backgroundColor = color;
+    this.el.nativeElement.style.color = color;
   }
 }

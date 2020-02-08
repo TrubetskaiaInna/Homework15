@@ -7,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TestComponent implements OnInit {
   public color;
+  public size;
   public day = '06.02.2000';
   public users = [
     {

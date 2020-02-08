@@ -1,9 +1,14 @@
 <div class="weekDay" [appChangeColor]="color">{{day}}:
-  {{day | weekDay: 'fr'}}</div>
+  {{day | weekDay: 'ua'}}</div>
 <input placeholder="enter color" class="weekDayInput" type="text" (input)="color=($event.target.value)">
 
-<div appChangePosition class="user" *ngFor="let user of users">
+<div appChangePosition [appChangeSize]="size" class="user" *ngFor="let user of users">
   {{user.name| nameInitials}}
-  <span>Age: {{user.birthday | age}}</span>
+  <span>, age: {{user.birthday | age}}</span>
 </div>
 
+<div class="radio">
+  <span>Select size:</span>
+  <input (click)="size='15px'" type="radio" name="radio">15px
+  <input (click)="size='25px'" type="radio" name="radio">25px
+</div>

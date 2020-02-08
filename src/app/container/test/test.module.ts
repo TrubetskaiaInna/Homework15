@@ -6,6 +6,7 @@ import {AgePipe} from '../../core/pipe/age.pipe';
 import {WeekDayPipe} from '../../core/pipe/weekDay.pipe';
 import {ChangePositionModule} from '../../core/changePositionDirective/changePosition.directive.module';
 import {ChangeColorModule} from '../../core/changeColorDirective/changeColor.directive.module';
+import {ChangeSizeModule} from '../../core/changeSize.directive/changeSize.directive.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {ChangeColorModule} from '../../core/changeColorDirective/changeColor.dir
   imports: [
     CommonModule,
     ChangePositionModule,
-    ChangeColorModule
+    ChangeColorModule,
+    ChangeSizeModule
   ],
   exports: [
     TestComponent

@@ -8,9 +8,19 @@ export class ChangePositionDirective {
   }
 
   @HostListener('click') changePosition() {
-    this.shiftElement('relative', '400px', 'line-through');
+    this.shiftElement('relative', '300px', 'line-through');
+  }
+
+  @HostListener('mouseenter') removePosition() {
+    this.removeElement('static', '-300px', 'none');
   }
   private shiftElement(position, shiftLeft, decor) {
+    this.el.nativeElement.style.position = position;
+    this.el.nativeElement.style.left = shiftLeft;
+    this.el.nativeElement.style.textDecoration = decor;
+  }
+
+  private removeElement(position, shiftLeft, decor) {
     this.el.nativeElement.style.position = position;
     this.el.nativeElement.style.left = shiftLeft;
     this.el.nativeElement.style.textDecoration = decor;
