@@ -11,7 +11,7 @@ export class NameInitialsPipe implements PipeTransform {
 
     str = str.trim();
     arrStr = str.split(' ');
-    arrStr.forEach((el, index) => {
+    arrStr.forEach((el) => {
       if (el !== '') {
         const bigLetters = el[0].toLocaleUpperCase();
         arrBigLetter.push(bigLetters + el.slice(1));

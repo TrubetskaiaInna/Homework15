@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {UserService} from '../../rest/service/user.service';
 
 @Component({
   selector: 'app-test',
@@ -8,26 +9,16 @@ import {Component, OnInit} from '@angular/core';
 export class TestComponent implements OnInit {
   public color;
   public size;
+  public action = false;
+  public text;
+  public title = '';
   public day = '06.02.2000';
-  public users = [
-    {
-      name: '   ivanov   ivan   ivanovich ',
-      birthday: '6.2.2000'
-    },
-    {
-      name: 'petrov   Petr   petrovich ',
-      birthday: '13.7.1995'
-    },
-    {
-      name: 'Sidorov   andrey   vladimirovich ',
-      birthday: '13.7.1990'
-    }
-  ];
+  public users;
 
-  constructor() {
+  constructor(private userService: UserService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.users = this.userService.get();
   }
-
 }

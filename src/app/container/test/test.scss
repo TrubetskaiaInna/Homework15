@@ -1,28 +1,71 @@
-.weekDay{
-  width: 190px;
+.wrapperWekDay {
   display: flex;
-  justify-content: flex-start;
-  margin-left: 10px;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 300px;
+  margin: 20px auto;
+  border: 1px solid silver;
+  padding-bottom: 20px;
 }
 
-.weekDayInput{
-  width: 185px;
-  outline: none;
+.weekDay {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
   margin-top: 10px;
-  margin-bottom: 20px;
-  margin-left: 10px;
 }
 
-.user{
+.wrapperUser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 300px;
+  margin: 20px auto;
+  border: 1px solid silver;
+  padding-bottom: 20px;
+}
+
+.user {
   display: flex;
   width: 250px;
   height: 30px;
-  margin-left: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-.radio{
-  margin-top: 10px;
+.radio {
+  padding-top: 10px;
   font-size: 18px;
-  margin-left: 10px;
+  border-top: 1px solid silver;
+}
+
+.wrapperAdd {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 100px;
+  margin: 20px auto;
+}
+
+.wrapperFilm {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 100px;
+  margin: 20px auto;
+}
+
+.film {
+  width: 400px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+ul {
+  font-size: 12px;
 }

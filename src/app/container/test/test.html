@@ -1,14 +1,88 @@
-<div class="weekDay" [appChangeColor]="color">{{day}}:
-  {{day | weekDay: 'ua'}}</div>
-<input placeholder="enter color" class="weekDayInput" type="text" (input)="color=($event.target.value)">
-
-<div appChangePosition [appChangeSize]="size" class="user" *ngFor="let user of users">
-  {{user.name| nameInitials}}
-  <span>, age: {{user.birthday | age}}</span>
+<div class="wrapperWekDay">
+  <div class="weekDay" [appChangeColor]="color">
+    {{day}}: {{day | weekDay: 'fr'}}
+  </div>
+  <label
+    ><input
+      placeholder="enter color"
+      class="btn btn-secondary my-2 my-sm-0"
+      type="text"
+      (input)="color=$event.target.value"
+  /></label>
 </div>
 
-<div class="radio">
-  <span>Select size:</span>
-  <input (click)="size='15px'" type="radio" name="radio">15px
-  <input (click)="size='25px'" type="radio" name="radio">25px
+<div class="wrapperUser">
+  <div
+    appChangePosition
+    [appChangeSize]="size"
+    class="user"
+    *ngFor="let user of users"
+  >
+    <span *appDelay="3000"
+      >{{user.name| nameInitials}}, age: {{user.birthday | age}}</span
+    >
+  </div>
+
+  <div class="radio">
+    <span>Select size:</span>
+    <label><input (click)="size='15px'" type="radio" name="radio"/></label>15px
+    <label><input (click)="size='25px'" type="radio" name="radio"/></label>25px
+  </div>
 </div>
+
+<div class="wrapperAdd">
+  <div>
+    <label><input class="form-control mr-sm-2" type="text" #valueInput/></label>
+  </div>
+  <div>
+    <button
+      class="btn btn-secondary disabled"
+      (click)="action= true;
+  text=valueInput.value;
+  valueInput.value = ''"
+    >
+      Add element
+    </button>
+  </div>
+
+  <p *appAddElement="action">
+    {{text}}
+    <button class="btn btn-secondary disabled" (click)="action=!action">
+      x
+    </button>
+  </p>
+</div>
+
+<div class="wrapperFilm">
+  <h3>Description film</h3>
+  <div class="film">
+    <label
+      ><input
+        class="btn btn-secondary my-2 my-sm-0"
+        placeholder="Enter title film"
+        type="text"
+        #enterFilm
+    /></label>
+
+    <button class="btn btn-secondary disabled" (click)="title=enterFilm.value">
+      Find
+    </button>
+  </div>
+  <p *appSearch="title; let info">{{info}}</p>
+</div>
+
+<span>*List films:</span>
+<ul>
+  <li>Thor: Ragnarok</li>
+  <li>Wonder Woman</li>
+  <li>Star Wars: The Last Jedi</li>
+  <li>Blade Runner 2049</li>
+  <li>Justice league</li>
+  <li>Alien. Covenant</li>
+  <li>Han Solo: Star Wars. Stories</li>
+  <li>Deadpool 2</li>
+  <li>Tomb Raider: Lara Croft</li>
+  <li>Guardians of the Galaxy</li>
+  <li>Pacific Rim 2</li>
+  <li>Interstellar</li>
+</ul>
